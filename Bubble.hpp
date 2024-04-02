@@ -1,14 +1,29 @@
-#include "Bubble.h"
-#include <SFML/Graphics.hpp> // for SFML
+#include <SFML/Graphics.hpp>
 
-using namespace sf;
+class Bubble
+{
+public:
+    Bubble(); // constructor 
+    Bubble(const int, const int, const int, const int,  const double, const double, const int, const int); // other constructor
+    void setDir(double, double);
+    void draw(sf::RenderWindow&);
+    void updatePosition(const int, const int);
+
+
+
+private:
+    sf::CircleShape bubble; // will create the bubbles
+    double xDir, yDir; 
+};
+
+
 
 Bubble::Bubble(const int R, const int RED, const int GREEN, const int BLUE, const double XDIRECTION, const double YDIRECTION, const int XPOS, const int YPOS)
 {
     bubble.setRadius(R);
     xDir = XDIRECTION; // random x direction
     yDir = YDIRECTION; // random y direction
-    bubble.setFillColor(Color(RED, GREEN, BLUE)); // random color
+    bubble.setFillColor(sf::Color(RED, GREEN, BLUE)); // random color
     bubble.setPosition(XPOS,YPOS); // random start position
 }
 
@@ -19,7 +34,7 @@ void Bubble::setDir(double xDir, double yDir)
     
 }
 
-void Bubble::draw(RenderWindow& window) // draws the circle member of the class
+void Bubble::draw(sf::RenderWindow& window) // draws the circle member of the class
 {
     window.draw(bubble);
 }
@@ -29,7 +44,7 @@ void Bubble::updatePosition(const int WIDTH, const int HEIGHT)// moves the circl
 {
     double diameter = 2 * bubble.getRadius(); // store the diameter
 
-    Vector2f position = bubble.getPosition(); // get the current position 
+    sf:: Vector2f position = bubble.getPosition(); // get the current position 
     double x = position.x; // store the x position
     double y = position.y; // store the y position
 
@@ -64,3 +79,7 @@ void Bubble::updatePosition(const int WIDTH, const int HEIGHT)// moves the circl
 
     bubble.setPosition(x, y); // move the bubble to the new position
 }
+
+
+
+

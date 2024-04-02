@@ -74,5 +74,5 @@ depend:
 .PHONY: all clean depend
 
 # DEPENDENCIES
-main.o: main.cpp bubble.h
-bubble.o: bubble.cpp bubble.h 
+main.o: main.cpp 
+bubble.o: bubble.cpp bubble.h

@@ -14,7 +14,6 @@
 #include <SFML/Graphics.hpp> // for SFML
 #include <ctime> // for elapsed time
 #include <cstdlib> // for rand() and srand()
-#include <iostream> // for output
 #include <vector> // for vectors
 
 using namespace sf;

@@ -9,8 +9,6 @@ public:
     Bubble(); // constructor 
     Bubble(const int, const int, const int, const int,  const double, const double, const int, const int); // other constructor
     void setDir(double, double);
-    double getxDir() const;
-    double getyDir() const;
     void draw(sf::RenderWindow&);
     void updatePosition(const int, const int);
 
