@@ -66,9 +66,9 @@ int main() {
         // Check if the desired interval has elapsed
         if (elapsedTime >= INTERVAL) {
             // Update bubble position
-            for (auto& bubbleObject : Bubbles) // iterate through each bubble in the vector
+            for (unsigned int i = 0; i < Bubbles.size(); i++) // iterate through each bubble in the vector
             {
-                bubbleObject.updatePosition(640, 640); // move each bubble
+                Bubbles[i].updatePosition(640, 640); // move each bubble
             }
 
             // Update the last check time
@@ -78,9 +78,9 @@ int main() {
         // Clear the window
         window.clear();
 
-        for (auto& bubbleObject : Bubbles) // iterate through each bubble in the vector
+        for (unsigned int j = 0; j < Bubbles.size(); j++) // iterate through each bubble in the vector
         {
-            bubbleObject.draw(window); // draw each bubble
+            Bubbles[j].draw(window); // draw each bubble
         }
 
         // Display the window contents
@@ -89,6 +89,7 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close();
+                break;
             } else if (event.type == Event::MouseButtonPressed) {
                 if (event.mouseButton.button == Mouse::Left) {
                     // Left mouse button is pressed

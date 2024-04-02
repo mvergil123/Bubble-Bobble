@@ -4,15 +4,6 @@
 
 using namespace sf;
 
-Bubble::Bubble()
-{
-    bubble.setFillColor(Color::White);
-    bubble.setRadius(10);
-    xDir = 1;
-    yDir = 0.5;
-    bubble.setPosition(0.1,0.1);
-}
-
 Bubble::Bubble(const int R, const int RED, const int GREEN, const int BLUE, const double XDIRECTION, const double YDIRECTION, const int XPOS, const int YPOS)
 {
     bubble.setRadius(R);
@@ -54,25 +45,25 @@ void Bubble::updatePosition(const int WIDTH, const int HEIGHT)// moves the circl
     double y = position.y; // store the y position
 
     // Check if the bubble hits the right wall or needs to reverse x direction
-    if ((x + diameter) >= WIDTH && xDir > 0)
+    if ((x + diameter) >= WIDTH )
     {
         xDir = -xDir; // Reverse x direction
     }
 
     // Check if the bubble hits the bottom wall or needs to reverse y direction
-    if ((y + diameter) >= HEIGHT && yDir > 0)
+    if ((y + diameter) >= HEIGHT ) 
     {
         yDir = -yDir; // Reverse y direction
     }
 
     // Check if the bubble hits the left wall or needs to reverse x direction
-    if (x <= 0 && xDir < 0)
+    if (x <= 0)
     {
         xDir = -xDir; // Reverse x direction
     }
 
     // Check if the bubble hits the top wall or needs to reverse y direction
-    if (y <= 0 && yDir < 0)
+    if (y <= 0 ) 
     {
         yDir = -yDir; // Reverse y direction
     }
